@@ -1,0 +1,205 @@
+\documentclass[11pt]{article} % hidelinks
+\usepackage{titlesec}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{longtable, array}
+\usepackage{enumitem}
+\usepackage{hang}
+\usepackage{fontawesome5}
+\usepackage[margin=3cm, a4paper]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+    urlbordercolor={red!80!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\titleformat{\section}{\large\scshape}{}{0em}{}[\titlerule] % Text formatting of sections
+\titlespacing{\section}{0pt}{1.2em}{1.2em} % Spacing around sections
+
+% 
+\newlength{\firstColumnWidth}
+\setlength{\firstColumnWidth}{3cm}
+\newlength{\tabusep}
+\setlength{\tabusep}{6mm}
+\newlength{\secondColumnWidth}
+\setlength{\secondColumnWidth}{\dimexpr \linewidth-\firstColumnWidth \relax}
+
+% Longlist, enumerate etc.
+\renewcommand\labelitemi{--}
+\setlist{nolistsep, noitemsep}
+\setlength\parindent{0pt}
+\setlength{\hyphenpenalty}{5000}
+\setlength{\LTpre}{0pt}
+\setlength{\LTpost}{1.2em}
+\setlength{\hangingindent}{9mm}
+\newcommand{\tabitem}{~~\llap{--}~~}
+\newcommand{\threeecols}[2]{\parbox{
+    0.98\secondColumnWidth}{\hfill
+    \parbox[t]{0.465\secondColumnWidth}{#1}
+    \parbox[t]{0.465\secondColumnWidth}{#2}
+    }
+}
+
+%\usepackage{showframe}
+
+\newcommand{\Tr}[1]{\textturkish{#1}}
+
+\newcommand{\tnl}{\tabularnewline & \tabularnewline}
+
+% Font Stuff
+\setmainfont{times}[
+    Extension      = .ttf,
+    Path           = /Applications/Microsoft Word.app/Contents/Resources/DFonts/,
+    BoldFont       = *bd,
+    ItalicFont     = *i,
+    BoldItalicFont = *bi,
+    Numbers        = {OldStyle,Proportional},
+    Script         = Latin,
+    Ligatures      = Discretionary,
+]
+
+\newcommand\liningnumbers{\addfontfeature{Numbers=Lining}}
+
+\newenvironment{twocols}
+    {
+    \begin{longtable}[h]{%
+        @{}%
+        >{\raggedleft}p{\firstColumnWidth}%
+        @{\hspace{\tabusep}}%
+        >{\arraybackslash\raggedright}p{\dimexpr %
+            \linewidth-\firstColumnWidth-\tabusep%
+        \relax}%
+        @{}%
+        }
+    } {
+        \end{longtable}
+    }
+    
+\newenvironment{threecols}
+    {
+    \begin{longtable}[h]{%
+        @{}%
+        >{\raggedleft}p{\firstColumnWidth}%
+        @{\hspace{\tabusep}}%
+        >{\raggedright}p{0.5\dimexpr %
+            (\linewidth-\firstColumnWidth-2\tabusep)%
+        \relax}%
+        @{\hspace{\tabusep}}%
+        >{\raggedright}p{0.5\dimexpr %
+            (\linewidth-\firstColumnWidth-2\tabusep)%
+        \relax}%
+        @{}%
+        }
+    } {
+        \end{longtable}
+    }
+
+\newcommand{\subTitle}[1]{\multicolumn{2}{l}{#1}}
+
+% Localisation stuff
+\setdefaultlanguage[variant=us]{english}
+\setotherlanguage{turkish}
+
+
+\begin{document}
+
+\begin{center}
+	\Tr{\LARGE \scshape {Utku Birkan}} \vspace{.5em}
+	
+    Mutlukent, 1958. Sk, No:5 \\
+    06800, Çankaya / Ankara, TR \\
+	\href{mailto:utku.birkan@gmail.com}{utku.birkan@gmail.com}\\
+    \href{https://github.com/kurabirko}{\faIcon{github}\hskip 2px kurabirko}
+\end{center}
+
+\section{Education}
+
+\begin{twocols}
+    2018 -- Present & %
+        \textbf{BSc Computer Engineering (Double Major)} \\
+        Middle East Techinal University -- \textit{Ankara, Turkey} \\
+        Cumulative GPA: \liningnumbers{3.90} \tnl
+    2017 -- Present & %
+            \textbf{BSc Physics} \\
+            Middle East Techinal University -- \textit{Ankara, Turkey} \\
+            Cumulative GPA: \liningnumbers{3.50}
+\end{twocols}
+
+\section{Research Experience}
+
+\begin{twocols}
+ 2020 -- Present & 
+        \textbf{Undergraduate Researcher} (08\kern1pt/2020 -- Present)\\
+        \textbf{Research Intern} (07\kern1pt/2020 -- 08\kern1pt/2020)\\
+        QWorld Association -- \textit{Lativa}\\
+        P.I.: Abuzer Yakaryılmaz, PhD and Özlem Salehi, PhD
+        \begin{itemize}
+            \item Work on ``Implementing Quantum Finite Automata Algorithms on Noisy Devices'' project as a part of QWorld's QResearch Program.
+            \item Study the mathematical modelling of quantum finite automata and their language recognition power for some specific languages.
+            \item Investigate architecture specific optimisations for the studied automata.
+            \item Conduct experiments using IBM's quantum computers.
+            \item Oversee the preparation of project manuscript and poster presentation.
+        \end{itemize}
+        \textbf{Manuscript in preparation:}
+        \begin{hangingpar}
+           Birkan, U., Salehi, Ö., Olejar, V., Nurlu, C., \& Yakaryılmaz., A. (2021). \textit{Implementing Quantum Finite Automata Algorithms on Noisy Devices}. Manuscript in preparation.
+        \end{hangingpar}
+\end{twocols}
+
+\section{Poster Presentation}
+
+\begin{hangingpar}
+Birkan, U., Salehi, Ö., Olejar, V., Nurlu, C., \& Yakaryılmaz, A. (2021). \textit{Implementing Quantum Finite Automata Algorithms on Noisy Devices}. Presented at the Conference on Quantum Information Processing, Munich, Germany.
+\end{hangingpar}
+
+\newpage
+\section{Professional \& Volunteer Experience}
+\begin{twocols}
+    2019 -- Present & %
+        \textbf{Leading Member} \\
+        QTurkey -- \textit{Turkey}
+        \begin{itemize}
+            \item A part of the \emph{Train the Trainers} education program, developed in cooperation with Microsoft.
+            \item Develop Jupyter based education material as a part of the educational committee.
+            \item Volunteered as an instructor or a mentor in various “Introduction to Quantum Computing” workshops.
+            \item Helped organise a seminar on quantum computing.
+        \end{itemize} \tabularnewline
+    2018 -- Present & %
+        \textbf{Member} \\ 
+        METU Life Saving and First Aid Society -- \textit{Turkey}
+        \begin{itemize}
+            \item Volunteer as an instructor, teaching first aid to the local community and university members.
+        \end{itemize}
+\end{twocols}
+
+\section{Qualifications}
+
+\begin{twocols}
+    Languages & \threeecols{\tabitem Native Turkish}{
+    \tabitem Advanced English} \tabularnewline & \tabularnewline
+    Computer Skills & %
+        Programming Languages\\[.5em]
+        \threeecols
+            {\tabitem C/C++ \par \tabitem Q\# \par \tabitem \LaTeX}
+            {\tabitem Python \par \tabitem Swift \par \tabitem Haskell}\\[.7em]
+        Technologies/Frameworks\\[.3em]
+        \threeecols {\tabitem git and Github}{\tabitem Qiskit}
+\end{twocols}
+
+\section{Honours, Certificates \& Awards}
+\vspace{-.5em}
+\renewcommand*{\arraystretch}{1.5}
+
+\begin{twocols}
+    2020 & \textbf{First Team Award for the Best Project}, QWorld Association \tabularnewline
+    2018 -- Present & \textbf{First Aid License}, Turkish Red Crescent \tabularnewline
+    2017 -- Present & \textbf{High Honor List}, Middle East Techincal University \tabularnewline
+    2017 -- Present & %
+        \textbf{Undergraduate Scholarship Program}, TÜBİTAK (The Scientific and Technological Research Council of Turkey)\\
+        Awarded due to high ranking in National University Entrance Examination.
+\end{twocols}
+
+\end{document}
