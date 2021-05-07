@@ -7,13 +7,18 @@
 \usepackage{hang}
 \usepackage{fontawesome5}
 \usepackage[margin=3cm, a4paper]{geometry}
-\usepackage{xcolor}
+\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{hyperref}
+\usepackage[
+    style=apa,
+]{biblatex}
+\addbibresource{pubs.bib}
 
 \hypersetup{
-    urlbordercolor={red!80!black},
-    citecolor={blue!50!black},
-    urlcolor={blue!80!black}
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=Fuchsia
 }
 
 \titleformat{\section}{\large\scshape}{}{0em}{}[\titlerule] % Text formatting of sections
@@ -26,6 +31,9 @@
 \setlength{\tabusep}{6mm}
 \newlength{\secondColumnWidth}
 \setlength{\secondColumnWidth}{\dimexpr \linewidth-\firstColumnWidth \relax}
+\newlength{\slashSize}
+\settoheight{\slashSize}{\texttt{/}}
+\newcommand{\GitHub}{\raisebox{-0.22ex}{\fontsize{1.5\slashSize}{1.44\slashSize}\ttfamily\faIcon{github}}}
 
 % Longlist, enumerate etc.
 \renewcommand\labelitemi{--}
@@ -46,20 +54,19 @@
 %\usepackage{showframe}
 
 \newcommand{\Tr}[1]{\textturkish{#1}}
-
 \newcommand{\tnl}{\tabularnewline & \tabularnewline}
 
 % Font Stuff
-\setmainfont{times}[
-    Extension      = .ttf,
-    Path           = /Applications/Microsoft Word.app/Contents/Resources/DFonts/,
-    BoldFont       = *bd,
-    ItalicFont     = *i,
-    BoldItalicFont = *bi,
-    Numbers        = {OldStyle,Proportional},
-    Script         = Latin,
-    Ligatures      = Discretionary,
-]
+\usepackage{libertinus-otf}
+\setmonofont[
+    Path=/Users/birk0/Working/tex/consolig/build/,
+    Scale=MatchLowercase,
+    Extension=.ttf,
+    UprightFont=*-Regular,
+    BoldFont=*-Bold,
+    ItalicFont=*-Italic,
+    BoldItalicFont=*-BoldItalic,
+]{Consolig}
 
 \newcommand\liningnumbers{\addfontfeature{Numbers=Lining}}
 
@@ -78,24 +85,6 @@
         \end{longtable}
     }
     
-\newenvironment{threecols}
-    {
-    \begin{longtable}[h]{%
-        @{}%
-        >{\raggedleft}p{\firstColumnWidth}%
-        @{\hspace{\tabusep}}%
-        >{\raggedright}p{0.5\dimexpr %
-            (\linewidth-\firstColumnWidth-2\tabusep)%
-        \relax}%
-        @{\hspace{\tabusep}}%
-        >{\raggedright}p{0.5\dimexpr %
-            (\linewidth-\firstColumnWidth-2\tabusep)%
-        \relax}%
-        @{}%
-        }
-    } {
-        \end{longtable}
-    }
 
 \newcommand{\subTitle}[1]{\multicolumn{2}{l}{#1}}
 
@@ -107,12 +96,11 @@
 \begin{document}
 
 \begin{center}
-	\Tr{\LARGE \scshape {Utku Birkan}} \vspace{.5em}
-	
+	\Tr{\LARGE \scshape {Utku Birkan}} \medskip \par
     Mutlukent, 1958. Sk, No:5 \\
-    06800, Çankaya / Ankara, TR \\
-	\href{mailto:utku.birkan@gmail.com}{utku.birkan@gmail.com}\\
-    \href{https://github.com/kurabirko}{\faIcon{github}\hskip 2px kurabirko}
+    06800, Çankaya / Ankara, TR  \par
+	\href{mailto:utku.birkan@gmail.com}{\ttfamily utku.birkan@gmail.com}\\
+    \href{https://github.com/kurabirko}{\ttfamily {\GitHub}/kurabirko}\par
 \end{center}
 
 \section{Education}
@@ -143,17 +131,12 @@
             \item Conduct experiments using IBM's quantum computers.
             \item Oversee the preparation of project manuscript and poster presentation.
         \end{itemize}
-        \textbf{Manuscript in preparation:}
-        \begin{hangingpar}
-           Birkan, U., Salehi, Ö., Olejar, V., Nurlu, C., \& Yakaryılmaz., A. (2021). \textit{Implementing Quantum Finite Automata Algorithms on Noisy Devices}. Manuscript in preparation.
-        \end{hangingpar}
 \end{twocols}
 
-\section{Poster Presentation}
+\section{Publications \& Poster Presentations}
 
-\begin{hangingpar}
-Birkan, U., Salehi, Ö., Olejar, V., Nurlu, C., \& Yakaryılmaz, A. (2021). \textit{Implementing Quantum Finite Automata Algorithms on Noisy Devices}. Presented at the Conference on Quantum Information Processing, Munich, Germany.
-\end{hangingpar}
+\nocite{proc, poster}
+\printbibliography[heading=none]
 
 \newpage
 \section{Professional \& Volunteer Experience}
@@ -183,7 +166,7 @@ Birkan, U., Salehi, Ö., Olejar, V., Nurlu, C., \& Yakaryılmaz, A. (2021). \tex
     Computer Skills & %
         Programming Languages\\[.5em]
         \threeecols
-            {\tabitem C/C++ \par \tabitem Q\# \par \tabitem \LaTeX}
+            {\tabitem C/C++ \par \tabitem Q\# and QDK \par \tabitem \LaTeX}
             {\tabitem Python \par \tabitem Swift \par \tabitem Haskell}\\[.7em]
         Technologies/Frameworks\\[.3em]
         \threeecols {\tabitem git and Github}{\tabitem Qiskit}
