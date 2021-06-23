@@ -8,15 +8,15 @@
 \usepackage{fontawesome5}
 \usepackage[margin=3cm, a4paper]{geometry}
 \usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{hyperref}
 \usepackage[
-    style=apa,
 ]{biblatex}
 \addbibresource{pubs.bib}
 
 \hypersetup{
     colorlinks=true,
-    linkcolor=black,
+    linkcolor=RoyalBlue,
     urlcolor=black,
     citecolor=Fuchsia
 }
@@ -58,15 +58,16 @@
 
 % Font Stuff
 \usepackage{libertinus-otf}
+
 \setmonofont[
-    Path=/Users/birk0/Working/tex/consolig/build/,
-    Scale=MatchLowercase,
-    Extension=.ttf,
-    UprightFont=*-Regular,
-    BoldFont=*-Bold,
-    ItalicFont=*-Italic,
-    BoldItalicFont=*-BoldItalic,
-]{Consolig}
+  Scale          = MatchLowercase,
+  Path           = {iA-Fonts/iA Writer Quattro/Static/},
+  Extension      = .ttf,
+  UprightFont    = *-Regular,
+  BoldFont       = *-Bold,
+  ItalicFont     = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+  ]{iAWriterQuattroS}
 
 \newcommand\liningnumbers{\addfontfeature{Numbers=Lining}}
 
@@ -96,7 +97,7 @@
 \begin{document}
 
 \begin{center}
-	\Tr{\LARGE \scshape {Utku Birkan}} \medskip \par
+	\Tr{\Huge \scshape {Utku Birkan}} \medskip \par
     Mutlukent, 1958. Sk, No:5 \\
     06800, Çankaya / Ankara, TR  \par
 	\href{mailto:utku.birkan@gmail.com}{\ttfamily utku.birkan@gmail.com}\\
@@ -109,11 +110,11 @@
     2018 -- Present & %
         \textbf{BSc Computer Engineering (Double Major)} \\
         Middle East Techinal University -- \textit{Ankara, Turkey} \\
-        Cumulative GPA: \liningnumbers{3.90} \tnl
+        Cumulative GPA: \liningnumbers{3.77} \tnl
     2017 -- Present & %
             \textbf{BSc Physics} \\
             Middle East Techinal University -- \textit{Ankara, Turkey} \\
-            Cumulative GPA: \liningnumbers{3.50}
+            Cumulative GPA: \liningnumbers{3.48}
 \end{twocols}
 
 \section{Research Experience}
@@ -133,10 +134,10 @@
         \end{itemize}
 \end{twocols}
 
-\section{Publications \& Poster Presentations}
+\section{Publication}
 
-\nocite{proc, poster}
-\printbibliography[heading=none]
+\fullcite{Birkan2021}
+% \printbibliography[heading=none]
 
 \newpage
 \section{Professional \& Volunteer Experience}
