@@ -1,3 +1,3 @@
-# Source of My CV
+# My CV
 
-The most recent version is [cv.pdf](./cv.pdf).
+Check out the [latest build](https://github.com/kurabirko/cv/releases/download/latest/utku-birkan.pdf).

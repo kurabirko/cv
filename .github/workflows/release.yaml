@@ -1,0 +1,23 @@
+name: release
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build documents using LaTeX
+        uses: xu-cheng/latex-action@v2
+        with:
+          latexmk_use_lualatex: true
+          root_file: utku-birkan.tex
+
+      - name: Release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{ github.token }}
+          automatic_release_tag: latest
+          prerelease: false
+          title: Latest Build
+          files: utku-birkan.pdf

@@ -1,0 +1,184 @@
+\documentclass[11pt]{article} % hidelinks
+\usepackage{titlesec}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{longtable, array}
+\usepackage{enumitem}
+\usepackage{hang}
+\usepackage{fontawesome5}
+\usepackage[margin=2cm, a4paper]{geometry}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage[
+]{biblatex}
+\addbibresource{pubs.bib}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=RoyalBlue,
+    urlcolor=black,
+    citecolor=Fuchsia
+}
+
+\titleformat{\section}{\large\scshape}{}{0em}{}[\titlerule] % Text formatting of sections
+\titlespacing{\section}{0pt}{1.2em}{1.2em} % Spacing around sections
+
+
+\newlength{\firstColumnWidth}
+\setlength{\firstColumnWidth}{3cm}
+\newlength{\tabusep}
+\setlength{\tabusep}{6mm}
+\newlength{\secondColumnWidth}
+\setlength{\secondColumnWidth}{\dimexpr \linewidth-\firstColumnWidth \relax}
+\newlength{\slashSize}
+\settoheight{\slashSize}{\texttt{/}}
+
+% Longlist, enumerate etc.
+\renewcommand\labelitemi{--}
+\setlist{nolistsep, noitemsep}
+\setlength\parindent{0pt}
+\setlength{\hyphenpenalty}{5000}
+\setlength{\LTpre}{0pt}
+\setlength{\LTpost}{1.2em}
+\setlength{\hangingindent}{9mm}
+\newcommand{\tabitem}{~~\llap{--}~~}
+\newcommand{\threeecols}[2]{\parbox{
+    0.98\secondColumnWidth}{\hfill
+    \parbox[t]{0.465\secondColumnWidth}{#1}
+    \parbox[t]{0.465\secondColumnWidth}{#2}
+    }
+}
+
+%\usepackage{showframe}
+
+\newcommand{\Tr}[1]{\textturkish{#1}}
+\newcommand{\twoNewline}{\tabularnewline & \tabularnewline}
+
+% Font Stuff
+\usepackage{libertinus}
+\defaultfontfeatures{Scale = MatchLowercase}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{Latin Modern Mono}
+
+\newcommand\liningnumbers{\addfontfeature{Numbers=Lining}}
+
+\newenvironment{twocols}
+    {
+    \begin{longtable}[h]{%
+        @{}%
+        >{\raggedleft}p{\firstColumnWidth}%
+        @{\hspace{\tabusep}}%
+        >{\arraybackslash\raggedright}p{\dimexpr %
+            \linewidth-\firstColumnWidth-\tabusep%
+        \relax}%
+        @{}%
+        }
+    } {
+        \end{longtable}
+    }
+    
+
+\newcommand{\subTitle}[1]{\multicolumn{2}{l}{#1}}
+
+% Localisation stuff
+\setdefaultlanguage[variant=us]{english}
+\setotherlanguage{turkish}
+
+
+\begin{document}
+
+\begin{center}
+	\Tr{\huge \LibertinusDisplay {Utku Birkan}} \medskip \par
+    Mutlukent, 1958. Sk, No:5, Çankaya / Ankara  \par
+	\href{mailto:utku.birkan@gmail.com}{utku.birkan@gmail.com} \hspace{2pt} · \hspace{2pt}
+    \href{https://github.com/kurabirko}{github.com/kurabirko}\par
+\end{center}
+
+\section{Education}
+
+\begin{twocols}
+  2018 -- Present & %
+    \textbf{BSc Computer Engineering (Double Major)} \\
+    Middle East Techinal University -- \textit{Ankara, Turkey} \\
+    Cumulative GPA: \liningnumbers{3.70} \\
+    Expected Graduation: July 2023 \twoNewline
+  2017 -- Present & %
+    \textbf{BSc Physics} \\
+    Middle East Techinal University -- \textit{Ankara, Turkey} \\
+    Cumulative GPA: \liningnumbers{3.55} \\
+    Dissertation: Measurement Based Quantum Computing \\
+    Expected Graduation: July 2022
+\end{twocols}
+
+\section{Relevant Experience}
+
+\begin{twocols}
+  2021 -- Present & 
+    \textbf{Mini-Mentorship Program} \\
+    Microsoft Quantum -- \textit{United States} \\
+    P.I.: Mariia Mykhailova \\
+    \begin{itemize}
+      \item Develop educational material as a part of Quantum Katas on E91 quantum key distribution protocol.
+      \item Write unit tests for Q\# and simulations using QDK. 
+    \end{itemize} \tabularnewline
+  2020 -- 2021 & 
+    \textbf{Undergraduate Researcher} (08/2020 -- 05/2021)\\
+    \textbf{Research Intern} (07/2020 -- 08/2020)\\
+    QWorld Association -- \textit{Lativa}\\
+    P.I.: Abuzer Yakaryılmaz, PhD and Özlem Salehi, PhD
+    \begin{itemize}
+        \item Worked on “Implementing Quantum Finite Automata Algorithms on Noisy Devices” project as a part of QWorld's QResearch Program.
+        \item Studied the mathematical modelling of quantum finite automata and their language recognition power for some specific languages.
+        \item Investigated architecture specific optimisations for the studied automata.
+        \item Conducted experiments using IBM's quantum computers.
+        \item Oversaw the preparation of project manuscript and poster presentation.
+    \end{itemize} \tabularnewline
+    2019 -- Present & 
+    \textbf{Instructor and Leading Member} \\
+    QTurkey -- \textit{Turkey}
+    \begin{itemize}
+        \item Work as an instructor in various quantum algorithms workshops.
+        \item Participated in the \emph{Train the Trainers} education program as an educator and worked in cooperation with Microsoft.
+        \item Developed Jupyter based education material as a part of the educational committee.
+        \item Helped organise a seminar on quantum computing.
+    \end{itemize}
+\end{twocols}
+
+\section{Publication}
+
+\fullcite{Birkan2021}
+% \printbibliography[heading=none]
+
+\section{Skills}
+
+\begin{twocols}
+    Languages & Turkish, English \twoNewline
+    Programming & C++, Python, Microsoft Q\# and QDK, git, Swift, \LaTeX, IBM Qiskit
+\end{twocols}
+
+\section{Honours, Certificates \& Awards}
+\vspace{-.5em}
+\renewcommand*{\arraystretch}{1.5}
+
+\begin{twocols}
+    2020 & \textbf{First Team Award for the Best Project}, QWorld Association \tabularnewline
+    2018 -- Present & \textbf{First Aid License}, Turkish Red Crescent \tabularnewline
+    2017 -- Present & \textbf{High Honor List}, Middle East Techincal University \tabularnewline
+    2017 -- Present & %
+        \textbf{Undergraduate Scholarship Program}, TÜBİTAK (The Scientific and Technological Research Council of Turkey)\\
+        Awarded due to high ranking in National University Entrance Examination.
+\end{twocols}
+
+\section{Membership}
+\begin{twocols}
+    2018 -- Present & %
+    \textbf{Member} \\ 
+    METU Life Saving and First Aid Society -- \textit{Turkey}
+    \begin{itemize}
+        \item Volunteer as an instructor, teaching first aid to the local community and university members.
+    \end{itemize}
+\end{twocols}
+
+
+\end{document}
