@@ -1,24 +1,18 @@
-\documentclass[11pt]{article} % hidelinks
-\usepackage{titlesec}
+\documentclass[11pt]{article}
 \usepackage{fontspec}
-\usepackage{polyglossia}
+\usepackage{titlesec}
+\usepackage[turkish, english]{babel}
+\usepackage{csquotes}
 \usepackage{longtable, array}
 \usepackage{enumitem}
-\usepackage{hang}
-\usepackage{fontawesome5}
 \usepackage[margin=2cm, a4paper]{geometry}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[dvipsnames]{xcolor}
 \usepackage{hyperref}
-\usepackage[
-]{biblatex}
+\usepackage{biblatex}
 \addbibresource{pubs.bib}
 
 \hypersetup{
     colorlinks=true,
-    linkcolor=RoyalBlue,
-    urlcolor=black,
-    citecolor=Fuchsia
+    allcolors=black,
 }
 
 \titleformat{\section}{\large\scshape}{}{0em}{}[\titlerule] % Text formatting of sections
@@ -41,7 +35,6 @@
 \setlength{\hyphenpenalty}{5000}
 \setlength{\LTpre}{0pt}
 \setlength{\LTpost}{1.2em}
-\setlength{\hangingindent}{9mm}
 \newcommand{\tabitem}{~~\llap{--}~~}
 \newcommand{\threeecols}[2]{\parbox{
     0.98\secondColumnWidth}{\hfill
@@ -52,7 +45,6 @@
 
 %\usepackage{showframe}
 
-\newcommand{\Tr}[1]{\textturkish{#1}}
 \newcommand{\twoNewline}{\tabularnewline & \tabularnewline}
 
 % Font Stuff
@@ -82,14 +74,11 @@
 \newcommand{\subTitle}[1]{\multicolumn{2}{l}{#1}}
 
 % Localisation stuff
-\setdefaultlanguage[variant=us]{english}
-\setotherlanguage{turkish}
-
 
 \begin{document}
 
 \begin{center}
-	\Tr{\huge \LibertinusDisplay {Utku Birkan}} \medskip \par
+	{\huge \LibertinusDisplay \foreignlanguage{turkish}{Utku Birkan}} \medskip \par
     Mutlukent, 1958. Sk, No:5, Çankaya / Ankara  \par
 	\href{mailto:utku.birkan@gmail.com}{utku.birkan@gmail.com} \hspace{2pt} · \hspace{2pt}
     \href{https://github.com/kurabirko}{github.com/kurabirko}\par
@@ -154,7 +143,7 @@
 
 \begin{twocols}
     Languages & Turkish, English \twoNewline
-    Programming & C++, Python, Microsoft Q\# and QDK, git, Swift, \LaTeX, IBM Qiskit
+    Programming & C++, Python, Microsoft Q\# and QDK, git, \LaTeX, IBM Qiskit
 \end{twocols}
 
 \section{Honours, Certificates \& Awards}
@@ -165,7 +154,7 @@
     2020 & \textbf{First Team Award for the Best Project}, QWorld Association \tabularnewline
     2018 -- Present & \textbf{First Aid License}, Turkish Red Crescent \tabularnewline
     2017 -- Present & \textbf{High Honor List}, Middle East Techincal University \tabularnewline
-    2017 -- Present & %
+    2017 -- 2021 & %
         \textbf{Undergraduate Scholarship Program}, TÜBİTAK (The Scientific and Technological Research Council of Turkey)\\
         Awarded due to high ranking in National University Entrance Examination.
 \end{twocols}
